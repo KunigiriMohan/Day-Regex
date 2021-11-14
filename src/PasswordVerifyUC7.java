@@ -18,7 +18,7 @@ public class PasswordVerifyUC7 {
         if (password==null&& password.isEmpty()){           //Checking input Password is empty or not
             return "Not valid ";
         }
-        String regex = "[A-z,a-z]+?[!@#$%^&*][a-z,A-Z]{6,}";    //Regex code for verifying Password
+        String regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$";    //Regex code for verifying Password
         Pattern pattern=Pattern.compile(regex);
         if (pattern.matcher(password).matches()){       //Checking entered password matches with regex code or not.
             return " Valid ";
