@@ -20,9 +20,9 @@ public class PasswordVerifyUC6 {
         {
             return " Not valid ";
         }
-        String regex="[a-z,A-Z]{1,}?[A-Z][a-z,A-Z]{6,}";    //Regex code for verifying Password
+        String regex="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$";    //Regex code for verifying Password
         Pattern pattern= Pattern.compile(regex);
-        if (pattern.matcher(password).matches())        //Checking entered password matches with regex code or not.
+        if (pattern.matcher(password).matches())        //Checking entered password matches wi
         {
             return " Valid ";
         }
